@@ -1,10 +1,5 @@
 #include "solution.h"
-#include "util.h"
-#include <unordered_set>
-#include <algorithm>
-#include <iterator>
-#include <unordered_map>
-#include <set>
+
 #include <cstring>
 using namespace sol271;
 using namespace std;
@@ -14,6 +9,7 @@ using namespace std;
     long each individual string should be in
     the encoded string it should be sufficient
     to decode the strings back later
+
 
 */
 string Solution::encode(vector<string> &strs)
@@ -36,7 +32,7 @@ vector<string> Solution::decode(string str)
       lenstr.push_back(str[i++]);
     auto len = stoi(lenstr);
     /* i should point at a '|' now */
-    i++; /* move to the beginning of the actual string */
+    i++; /* move to the beginning of the actual content of the string */
     string decoded = "";
     /*retrieve the string back */
     while (len > 0)
